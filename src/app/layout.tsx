@@ -14,7 +14,10 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Teslo shop',
+  title: {
+    template: '%s - Teslo | shop',
+    default: 'Home- Teslo | shop',
+  },
   description: 'store',
 };
 
