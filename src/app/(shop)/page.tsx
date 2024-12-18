@@ -13,9 +13,10 @@ interface HomeProps {
 }
 
 export default async function Home({ searchParams }: HomeProps) {
-  const page = searchParams.page ? parseInt(searchParams.page) : 1;
+  const { page } = await searchParams;
+  const newPage = page ? parseInt(page) : 1;
   const { products, totalPages } = await getPaginatedProductsWithImages({
-    page,
+    page: newPage,
   });
 
   if (products.length === 0) {
