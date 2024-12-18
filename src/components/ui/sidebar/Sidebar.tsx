@@ -16,13 +16,12 @@ import {
 import { useUIStore } from '@/store';
 import { logout } from '@/actions';
 import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+
 import { useMemo } from 'react';
 
 export const Sidebar = () => {
   const isSideMenuOpen = useUIStore((state) => state.isSideMenuOpen);
   const closeMenu = useUIStore((state) => state.closeSideMenu);
-  const router = useRouter();
 
   const { data: session } = useSession();
 
@@ -85,8 +84,9 @@ export const Sidebar = () => {
             </Link>
 
             <Link
-              href='/'
+              href='/orders'
               className='flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all'
+              onClick={() => closeMenu()}
             >
               <IoTicketOutline size={30} />
               <span className='ml-3 text-xl'>Ordenes</span>
