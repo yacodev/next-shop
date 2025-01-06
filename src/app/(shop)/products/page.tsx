@@ -1,6 +1,5 @@
 //import { getPaginatedProductsWithImages } from '@/actions';
-import { ProductGrid, Title } from '@/components';
-import { initialData } from '@/seed/seed';
+import { Title } from '@/components';
 
 //const products = initialData.products;
 
